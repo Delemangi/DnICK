@@ -15,7 +15,6 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     user = models.ForeignKey(to=BlogUser, on_delete=models.CASCADE)
     content = models.TextField()
-    files = models.FileField(upload_to="files/", null=True, blank=True)
     creation_date = models.DateTimeField(auto_now_add=True)
     last_modified_date = models.DateTimeField(auto_now=True)
 
@@ -31,6 +30,14 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.content
+
+
+class File(models.Model):
+    file = models.FileField(upload_to="files/", null=True, blank=True)
+    post = models.ForeignKey(to=Post, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.file.name
 
 
 class Block(models.Model):
