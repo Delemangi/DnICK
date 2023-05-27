@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Profile</title>
+</head>
+<body class="bg-dark text-center text-white">
+<div class="container">
+    <div class="row text-center">
+        <div class="fs-1 col-3">Name & Surname</div>
+        <div class="fs-1 col-3">Image</div>
+        <div class="fs-1 col-2">Interests</div>
+        <div class="fs-1 col-2">Skills</div>
+        <div class="fs-1 col-2">Profession</div>
+    </div>
+    <div class="row text-center">
+        <div class="col-3">
+            {{ user.name }} {{ user.surname }}
+        </div>
+        <div class="col-3">
+            <img class="img-fluid" src="{{ user.image }}" alt="Image">
+        </div>
+        <div class="col-2">
+            {{ user.interests }}
+        </div>
+        <div class="col-2">
+            {{ user.skills }}
+        </div>
+        <div class="col-2">
+            {{ user.profession }}
+        </div>
+    </div>
+</div>
+</body>
+</html>
